@@ -7,6 +7,8 @@ class Buttons(Login):
     def __init__(self):
         super(Buttons, self).__init__()
 
+    # presses the checkbox buttons in order and resets them at the end, method practice_website
+    # () needs to be called before this one
     def button_checkbox(self):
         self.wait_by_id("buttons").click()
         self.wait_by_id("checkboxes").click()
@@ -16,6 +18,8 @@ class Buttons(Login):
                 time.sleep(0.5)
         self.find_element(By.XPATH, "//*[@id='content']/form/div/button").click()
 
+    # clicks the radio buttons in order, displaying a message if they are enabled or disabled, method practice_website
+    # () needs to be called before this one
     def button_radio(self):
         self.wait_by_id("buttons").click()
         self.wait_by_id("radio-buttons").click()
@@ -28,3 +32,4 @@ class Buttons(Login):
                 else:
                     print(f"Button {j} is disabled")
                     continue
+
