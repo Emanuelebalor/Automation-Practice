@@ -8,6 +8,7 @@ class BtnAction(Login):
     def __init__(self):
         super(BtnAction, self).__init__()
 
+    # double clicks on the button, checks the message shows after double click
     def btn_act_double_click(self):
         self.get("https://qa-practice.netlify.app/double-click.html")
         self.wait_by_id("double-click-btn")
@@ -18,11 +19,13 @@ class BtnAction(Login):
         else:
             print("double click does not work")
 
+    # scrolls down to the footer
     def btn_act_scroll(self):
         self.get("https://qa-practice.netlify.app/scroll.html")
         time.sleep(2)
         ActionChains(self).scroll_to_element(self.find_element(By.ID, "the-end")).perform()
 
+    # hover the mouse over the hoverable elements, checks the message displayed when the element are hovered over
     def btn_mouse_hover(self):
         self.get("https://qa-practice.netlify.app/mouse-hover.html")
         time.sleep(2)
