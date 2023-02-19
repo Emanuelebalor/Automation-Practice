@@ -85,3 +85,4 @@ class SignUpForm(Login):
                 print("The account has been successfully created!")
         except TimeoutError:
             self.quit()
+
